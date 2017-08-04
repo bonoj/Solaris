@@ -26,7 +26,6 @@ class StarsActivity : LifecycleActivity() {
             } else {
                 Log.i("STARZ", "displayStars returned nothing")
             }
-            //stars -> ArrayList<Star>()
         })
     }
 
