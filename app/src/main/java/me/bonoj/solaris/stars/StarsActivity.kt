@@ -17,21 +17,15 @@ class StarsActivity : LifecycleActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_stars)
 
-        Log.i("STARZ", "onCreate called")
-
         viewModel = ViewModelProviders.of(this).get(StarsViewModel::class.java)
         viewModel.getStars().observe(this, Observer {
             if (it != null){
                 displayStars(it)
-            } else {
-                Log.i("STARZ", "displayStars returned nothing")
             }
         })
     }
 
     private fun displayStars(stars: List<Star>) {
-
-        Log.i("STARZ", "displayStars called")
 
         var starString: String = ""
         for (star in stars) {
